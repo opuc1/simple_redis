@@ -7,9 +7,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RedisController<M extends RedisMessage> {
     private final RedisManager manager;
-    private final Class<M> clazz;
     private final String channel;
 
+    private Class<M> clazz;
     private RedisHandler<M> handler;
 
     public void handle(M message) {
